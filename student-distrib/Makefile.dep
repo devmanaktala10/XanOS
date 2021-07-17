@@ -1,0 +1,1154 @@
+boot.o: boot.S multiboot.h x86_desc.h types.h
+x86_desc.o: x86_desc.S x86_desc.h types.h
+kernel.o: kernel.c multiboot.h types.h x86_desc.h lib.h debug.h tests.h \
+  drivers/i8259.h drivers/../types.h drivers/../lib.h drivers/pit.h \
+  drivers/../x86_desc.h drivers/terminal.h \
+  drivers/../filesystem/filesystem.h drivers/../filesystem/../types.h \
+  drivers/../filesystem/../multiboot.h \
+  drivers/../filesystem/../drivers/keyboard.h \
+  drivers/../filesystem/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/i8259.h \
+  drivers/../filesystem/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/system_call.h \
+  drivers/../filesystem/../drivers/../syscalls/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/rtc.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/i8259.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/signals.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../syscalls/system_call.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/cirrus.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./pci.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/ext2.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/ata.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/keyboard.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../text.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../text.h \
+  drivers/../filesystem/../drivers/../syscalls/../filesystem/ext2.h \
+  drivers/../filesystem/../drivers/../syscalls/../signals/signals.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../text.h \
+  drivers/../filesystem/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/gui.h drivers/../filesystem/../lib.h \
+  drivers/../filesystem/../drivers/rtc.h \
+  drivers/../filesystem/../processes/process.h \
+  drivers/../filesystem/../drivers/ata.h drivers/../filesystem/ext2.h \
+  drivers/keyboard.h drivers/../paging/page.h drivers/i8259.h \
+  drivers/graphic_terminal.h drivers/gui.h drivers/keyboard.h \
+  drivers/rtc.h drivers/terminal.h processes/process.h \
+  filesystem/filesystem.h syscalls/system_call.h exceptions/exception.h \
+  exceptions/../types.h exceptions/../syscalls/system_call.h \
+  exceptions/../lib.h exceptions/../x86_desc.h interrupts/interrupt.h \
+  interrupts/../types.h interrupts/../x86_desc.h interrupts/../lib.h \
+  interrupts/../drivers/i8259.h interrupts/../drivers/rtc.h paging/page.h \
+  filesystem/ext2.h signals/signals.h drivers/pci.h drivers/cirrus.h \
+  drivers/graphic_terminal.h drivers/gui.h drivers/networking.h \
+  drivers/../interrupts/interrupt.h text.h
+lib.o: lib.c lib.h types.h
+tests.o: tests.c tests.h x86_desc.h types.h lib.h drivers/i8259.h \
+  drivers/../types.h drivers/../lib.h drivers/rtc.h drivers/i8259.h \
+  drivers/terminal.h drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../types.h drivers/../filesystem/../multiboot.h \
+  drivers/../filesystem/../types.h \
+  drivers/../filesystem/../drivers/keyboard.h \
+  drivers/../filesystem/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/i8259.h \
+  drivers/../filesystem/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/system_call.h \
+  drivers/../filesystem/../drivers/../syscalls/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/rtc.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/signals.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../syscalls/system_call.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/cirrus.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./pci.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/ext2.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/ata.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/keyboard.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../text.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../text.h \
+  drivers/../filesystem/../drivers/../syscalls/../filesystem/ext2.h \
+  drivers/../filesystem/../drivers/../syscalls/../signals/signals.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../text.h \
+  drivers/../filesystem/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/gui.h drivers/../filesystem/../lib.h \
+  drivers/../filesystem/../drivers/rtc.h \
+  drivers/../filesystem/../processes/process.h \
+  drivers/../filesystem/../drivers/ata.h drivers/../filesystem/ext2.h \
+  drivers/keyboard.h drivers/../paging/page.h drivers/terminal.h \
+  filesystem/filesystem.h
+text.o: text.c text.h types.h
+exceptions.o: exceptions/exceptions.S
+interrupts.o: interrupts/interrupts.S
+paging.o: paging/paging.S
+signals_ass.o: signals/signals_ass.S
+syscalls.o: syscalls/syscalls.S
+ata.o: drivers/ata.c drivers/ata.h drivers/../lib.h drivers/../types.h
+cirrus.o: drivers/cirrus.c drivers/cirrus.h drivers/../types.h \
+  drivers/../lib.h drivers/../types.h drivers/../paging/page.h \
+  drivers/../paging/../types.h drivers/../paging/../x86_desc.h \
+  drivers/../paging/../types.h drivers/../paging/../lib.h drivers/./pci.h \
+  drivers/./../lib.h drivers/./terminal.h drivers/./../types.h \
+  drivers/./../filesystem/filesystem.h drivers/./../filesystem/../types.h \
+  drivers/./../filesystem/../multiboot.h \
+  drivers/./../filesystem/../types.h \
+  drivers/./../filesystem/../drivers/keyboard.h \
+  drivers/./../filesystem/../drivers/../types.h \
+  drivers/./../filesystem/../drivers/../lib.h \
+  drivers/./../filesystem/../drivers/i8259.h \
+  drivers/./../filesystem/../drivers/terminal.h \
+  drivers/./../filesystem/../drivers/../syscalls/system_call.h \
+  drivers/./../filesystem/../drivers/../syscalls/../x86_desc.h \
+  drivers/./../filesystem/../drivers/../syscalls/../lib.h \
+  drivers/./../filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  drivers/./../filesystem/../drivers/../syscalls/../paging/page.h \
+  drivers/./../filesystem/../drivers/../syscalls/../drivers/rtc.h \
+  drivers/./../filesystem/../drivers/../syscalls/../drivers/../types.h \
+  drivers/./../filesystem/../drivers/../syscalls/../drivers/../lib.h \
+  drivers/./../filesystem/../drivers/../syscalls/../drivers/i8259.h \
+  drivers/./../filesystem/../drivers/../syscalls/../drivers/terminal.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/process.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../types.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../drivers/terminal.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../filesystem/filesystem.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../paging/page.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/signals.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../x86_desc.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../processes/process.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../syscalls/system_call.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../lib.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/gui.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/cirrus.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/ext2.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../lib.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/ata.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/../lib.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../paging/page.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../processes/process.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/keyboard.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../text.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../drivers/gui.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../text.h \
+  drivers/./../filesystem/../drivers/../syscalls/../filesystem/ext2.h \
+  drivers/./../filesystem/../drivers/../syscalls/../signals/signals.h \
+  drivers/./../filesystem/../drivers/../syscalls/../drivers/graphic_terminal.h \
+  drivers/./../filesystem/../drivers/../syscalls/../drivers/gui.h \
+  drivers/./../filesystem/../drivers/../syscalls/../text.h \
+  drivers/./../filesystem/../drivers/graphic_terminal.h \
+  drivers/./../filesystem/../drivers/gui.h \
+  drivers/./../filesystem/../lib.h \
+  drivers/./../filesystem/../drivers/rtc.h \
+  drivers/./../filesystem/../processes/process.h \
+  drivers/./../filesystem/../drivers/ata.h drivers/./../filesystem/ext2.h \
+  drivers/./keyboard.h drivers/./../paging/page.h
+graphic_terminal.o: drivers/graphic_terminal.c drivers/graphic_terminal.h \
+  drivers/../types.h drivers/../lib.h drivers/../types.h \
+  drivers/../filesystem/filesystem.h drivers/../filesystem/../types.h \
+  drivers/../filesystem/../multiboot.h drivers/../filesystem/../types.h \
+  drivers/../filesystem/../drivers/keyboard.h \
+  drivers/../filesystem/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/i8259.h \
+  drivers/../filesystem/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/keyboard.h \
+  drivers/../filesystem/../drivers/../paging/page.h \
+  drivers/../filesystem/../drivers/../paging/../types.h \
+  drivers/../filesystem/../drivers/../paging/../x86_desc.h \
+  drivers/../filesystem/../drivers/../paging/../types.h \
+  drivers/../filesystem/../drivers/../paging/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/system_call.h \
+  drivers/../filesystem/../drivers/../syscalls/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/rtc.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/i8259.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/signals.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../syscalls/system_call.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/cirrus.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/./pci.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/./../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/./terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/../filesystem/ext2.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/../filesystem/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/../filesystem/../drivers/ata.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/../filesystem/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/keyboard.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/../text.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../text.h \
+  drivers/../filesystem/../drivers/../syscalls/../filesystem/ext2.h \
+  drivers/../filesystem/../drivers/../syscalls/../signals/signals.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../text.h \
+  drivers/../filesystem/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/gui.h drivers/../filesystem/../lib.h \
+  drivers/../filesystem/../drivers/rtc.h \
+  drivers/../filesystem/../processes/process.h \
+  drivers/../filesystem/../drivers/ata.h drivers/../filesystem/ext2.h \
+  drivers/gui.h drivers/keyboard.h drivers/../paging/page.h \
+  drivers/../text.h drivers/cirrus.h
+gui.o: drivers/gui.c drivers/gui.h drivers/../lib.h drivers/../types.h \
+  drivers/../types.h drivers/cirrus.h drivers/../paging/page.h \
+  drivers/../paging/../types.h drivers/../paging/../x86_desc.h \
+  drivers/../paging/../types.h drivers/../paging/../lib.h drivers/./pci.h \
+  drivers/./../lib.h drivers/./terminal.h drivers/./../types.h \
+  drivers/./../filesystem/filesystem.h drivers/./../filesystem/../types.h \
+  drivers/./../filesystem/../multiboot.h \
+  drivers/./../filesystem/../types.h \
+  drivers/./../filesystem/../drivers/keyboard.h \
+  drivers/./../filesystem/../drivers/../types.h \
+  drivers/./../filesystem/../drivers/../lib.h \
+  drivers/./../filesystem/../drivers/i8259.h \
+  drivers/./../filesystem/../drivers/terminal.h \
+  drivers/./../filesystem/../drivers/../syscalls/system_call.h \
+  drivers/./../filesystem/../drivers/../syscalls/../x86_desc.h \
+  drivers/./../filesystem/../drivers/../syscalls/../lib.h \
+  drivers/./../filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  drivers/./../filesystem/../drivers/../syscalls/../paging/page.h \
+  drivers/./../filesystem/../drivers/../syscalls/../drivers/rtc.h \
+  drivers/./../filesystem/../drivers/../syscalls/../drivers/../types.h \
+  drivers/./../filesystem/../drivers/../syscalls/../drivers/../lib.h \
+  drivers/./../filesystem/../drivers/../syscalls/../drivers/i8259.h \
+  drivers/./../filesystem/../drivers/../syscalls/../drivers/terminal.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/process.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../types.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../drivers/terminal.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../filesystem/filesystem.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../paging/page.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/signals.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../x86_desc.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../processes/process.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../syscalls/system_call.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../lib.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/gui.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/keyboard.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../paging/page.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../text.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/cirrus.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../drivers/gui.h \
+  drivers/./../filesystem/../drivers/../syscalls/../processes/../text.h \
+  drivers/./../filesystem/../drivers/../syscalls/../filesystem/ext2.h \
+  drivers/./../filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  drivers/./../filesystem/../drivers/../syscalls/../filesystem/../lib.h \
+  drivers/./../filesystem/../drivers/../syscalls/../filesystem/../drivers/ata.h \
+  drivers/./../filesystem/../drivers/../syscalls/../filesystem/../drivers/../lib.h \
+  drivers/./../filesystem/../drivers/../syscalls/../signals/signals.h \
+  drivers/./../filesystem/../drivers/../syscalls/../drivers/graphic_terminal.h \
+  drivers/./../filesystem/../drivers/../syscalls/../drivers/gui.h \
+  drivers/./../filesystem/../drivers/../syscalls/../text.h \
+  drivers/./../filesystem/../drivers/graphic_terminal.h \
+  drivers/./../filesystem/../drivers/gui.h \
+  drivers/./../filesystem/../lib.h \
+  drivers/./../filesystem/../drivers/rtc.h \
+  drivers/./../filesystem/../processes/process.h \
+  drivers/./../filesystem/../drivers/ata.h drivers/./../filesystem/ext2.h \
+  drivers/./keyboard.h drivers/./../paging/page.h \
+  drivers/../filesystem/ext2.h drivers/graphic_terminal.h \
+  drivers/../processes/process.h drivers/keyboard.h drivers/../text.h
+i8259.o: drivers/i8259.c drivers/i8259.h drivers/../types.h \
+  drivers/../lib.h drivers/../types.h
+keyboard.o: drivers/keyboard.c drivers/keyboard.h drivers/../types.h \
+  drivers/../lib.h drivers/../types.h drivers/i8259.h drivers/terminal.h \
+  drivers/../filesystem/filesystem.h drivers/../filesystem/../types.h \
+  drivers/../filesystem/../multiboot.h drivers/../filesystem/../types.h \
+  drivers/../filesystem/../drivers/keyboard.h \
+  drivers/../filesystem/../lib.h drivers/../filesystem/../drivers/rtc.h \
+  drivers/../filesystem/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/i8259.h \
+  drivers/../filesystem/../drivers/terminal.h \
+  drivers/../filesystem/../processes/process.h \
+  drivers/../filesystem/../processes/../types.h \
+  drivers/../filesystem/../processes/../drivers/terminal.h \
+  drivers/../filesystem/../processes/../filesystem/filesystem.h \
+  drivers/../filesystem/../processes/../paging/page.h \
+  drivers/../filesystem/../processes/../paging/../types.h \
+  drivers/../filesystem/../processes/../paging/../x86_desc.h \
+  drivers/../filesystem/../processes/../paging/../types.h \
+  drivers/../filesystem/../processes/../paging/../lib.h \
+  drivers/../filesystem/../processes/../signals/signals.h \
+  drivers/../filesystem/../processes/../signals/../x86_desc.h \
+  drivers/../filesystem/../processes/../signals/../processes/process.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/system_call.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../x86_desc.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../lib.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../filesystem/filesystem.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../paging/page.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/rtc.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../processes/process.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../filesystem/ext2.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../filesystem/filesystem.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../filesystem/../lib.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../filesystem/../drivers/ata.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../filesystem/../drivers/../lib.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../signals/signals.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/../types.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/../lib.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/gui.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/cirrus.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/../paging/page.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/./pci.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/./../lib.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/./terminal.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/../filesystem/ext2.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/../processes/process.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/keyboard.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/../text.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/../types.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../drivers/gui.h \
+  drivers/../filesystem/../processes/../signals/../syscalls/../text.h \
+  drivers/../filesystem/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../processes/../drivers/gui.h \
+  drivers/../filesystem/../processes/../text.h \
+  drivers/../filesystem/../drivers/ata.h drivers/../filesystem/ext2.h \
+  drivers/../paging/page.h drivers/../syscalls/system_call.h \
+  drivers/graphic_terminal.h drivers/gui.h
+networking.o: drivers/networking.c drivers/networking.h drivers/../lib.h \
+  drivers/../types.h drivers/../interrupts/interrupt.h \
+  drivers/../interrupts/../types.h drivers/../interrupts/../x86_desc.h \
+  drivers/../interrupts/../types.h drivers/../interrupts/../lib.h \
+  drivers/../interrupts/../drivers/i8259.h \
+  drivers/../interrupts/../drivers/../types.h \
+  drivers/../interrupts/../drivers/../lib.h \
+  drivers/../interrupts/../drivers/rtc.h \
+  drivers/../interrupts/../drivers/i8259.h \
+  drivers/../interrupts/../drivers/terminal.h \
+  drivers/../interrupts/../drivers/../filesystem/filesystem.h \
+  drivers/../interrupts/../drivers/../filesystem/../types.h \
+  drivers/../interrupts/../drivers/../filesystem/../multiboot.h \
+  drivers/../interrupts/../drivers/../filesystem/../types.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/keyboard.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../types.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../lib.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/i8259.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/terminal.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/system_call.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../x86_desc.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../lib.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../paging/page.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../paging/../types.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../paging/../x86_desc.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../paging/../lib.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../drivers/rtc.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/process.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../types.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/terminal.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../filesystem/filesystem.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../paging/page.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/signals.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../x86_desc.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../processes/process.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../syscalls/system_call.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../lib.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/gui.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/cirrus.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../paging/page.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./pci.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./../lib.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./terminal.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/ext2.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../lib.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/ata.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/../lib.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../processes/process.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/keyboard.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../text.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/gui.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../text.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../filesystem/ext2.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../signals/signals.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../drivers/graphic_terminal.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../drivers/gui.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/../syscalls/../text.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/graphic_terminal.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/gui.h \
+  drivers/../interrupts/../drivers/../filesystem/../lib.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/rtc.h \
+  drivers/../interrupts/../drivers/../filesystem/../processes/process.h \
+  drivers/../interrupts/../drivers/../filesystem/../drivers/ata.h \
+  drivers/../interrupts/../drivers/../filesystem/ext2.h \
+  drivers/../interrupts/../drivers/keyboard.h \
+  drivers/../interrupts/../drivers/../paging/page.h
+pci.o: drivers/pci.c drivers/pci.h drivers/../lib.h drivers/../types.h \
+  drivers/terminal.h drivers/../types.h \
+  drivers/../filesystem/filesystem.h drivers/../filesystem/../types.h \
+  drivers/../filesystem/../multiboot.h drivers/../filesystem/../types.h \
+  drivers/../filesystem/../drivers/keyboard.h \
+  drivers/../filesystem/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/i8259.h \
+  drivers/../filesystem/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/system_call.h \
+  drivers/../filesystem/../drivers/../syscalls/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/rtc.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/i8259.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/signals.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../syscalls/system_call.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/cirrus.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./pci.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/ext2.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/ata.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/keyboard.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../text.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../text.h \
+  drivers/../filesystem/../drivers/../syscalls/../filesystem/ext2.h \
+  drivers/../filesystem/../drivers/../syscalls/../signals/signals.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../text.h \
+  drivers/../filesystem/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/gui.h drivers/../filesystem/../lib.h \
+  drivers/../filesystem/../drivers/rtc.h \
+  drivers/../filesystem/../processes/process.h \
+  drivers/../filesystem/../drivers/ata.h drivers/../filesystem/ext2.h \
+  drivers/keyboard.h drivers/../paging/page.h
+pit.o: drivers/pit.c drivers/pit.h drivers/../types.h \
+  drivers/../x86_desc.h drivers/../types.h drivers/../lib.h \
+  drivers/terminal.h drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../types.h drivers/../filesystem/../multiboot.h \
+  drivers/../filesystem/../types.h \
+  drivers/../filesystem/../drivers/keyboard.h \
+  drivers/../filesystem/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/i8259.h \
+  drivers/../filesystem/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/system_call.h \
+  drivers/../filesystem/../drivers/../syscalls/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/rtc.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/i8259.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/signals.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../syscalls/system_call.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/cirrus.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./pci.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/ext2.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/ata.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/keyboard.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../text.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../text.h \
+  drivers/../filesystem/../drivers/../syscalls/../filesystem/ext2.h \
+  drivers/../filesystem/../drivers/../syscalls/../signals/signals.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../text.h \
+  drivers/../filesystem/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/gui.h drivers/../filesystem/../lib.h \
+  drivers/../filesystem/../drivers/rtc.h \
+  drivers/../filesystem/../processes/process.h \
+  drivers/../filesystem/../drivers/ata.h drivers/../filesystem/ext2.h \
+  drivers/keyboard.h drivers/../paging/page.h drivers/i8259.h \
+  drivers/graphic_terminal.h drivers/gui.h
+rtc.o: drivers/rtc.c drivers/rtc.h drivers/../types.h drivers/../lib.h \
+  drivers/../types.h drivers/i8259.h drivers/terminal.h \
+  drivers/../filesystem/filesystem.h drivers/../filesystem/../types.h \
+  drivers/../filesystem/../multiboot.h drivers/../filesystem/../types.h \
+  drivers/../filesystem/../drivers/keyboard.h \
+  drivers/../filesystem/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/i8259.h \
+  drivers/../filesystem/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/system_call.h \
+  drivers/../filesystem/../drivers/../syscalls/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/rtc.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/signals.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../syscalls/system_call.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/cirrus.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./pci.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/ext2.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/ata.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/keyboard.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../text.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../text.h \
+  drivers/../filesystem/../drivers/../syscalls/../filesystem/ext2.h \
+  drivers/../filesystem/../drivers/../syscalls/../signals/signals.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../text.h \
+  drivers/../filesystem/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/gui.h drivers/../filesystem/../lib.h \
+  drivers/../filesystem/../drivers/rtc.h \
+  drivers/../filesystem/../processes/process.h \
+  drivers/../filesystem/../drivers/ata.h drivers/../filesystem/ext2.h \
+  drivers/keyboard.h drivers/../paging/page.h
+terminal.o: drivers/terminal.c drivers/terminal.h drivers/../types.h \
+  drivers/../lib.h drivers/../types.h drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../types.h drivers/../filesystem/../multiboot.h \
+  drivers/../filesystem/../types.h \
+  drivers/../filesystem/../drivers/keyboard.h \
+  drivers/../filesystem/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/i8259.h \
+  drivers/../filesystem/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/system_call.h \
+  drivers/../filesystem/../drivers/../syscalls/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../paging/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/rtc.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/i8259.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/signals.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../x86_desc.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../syscalls/system_call.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/cirrus.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../paging/page.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./pci.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/ext2.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/ata.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/../lib.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../processes/process.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/keyboard.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../text.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../processes/../text.h \
+  drivers/../filesystem/../drivers/../syscalls/../filesystem/ext2.h \
+  drivers/../filesystem/../drivers/../syscalls/../signals/signals.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/../syscalls/../drivers/gui.h \
+  drivers/../filesystem/../drivers/../syscalls/../text.h \
+  drivers/../filesystem/../drivers/graphic_terminal.h \
+  drivers/../filesystem/../drivers/gui.h drivers/../filesystem/../lib.h \
+  drivers/../filesystem/../drivers/rtc.h \
+  drivers/../filesystem/../processes/process.h \
+  drivers/../filesystem/../drivers/ata.h drivers/../filesystem/ext2.h \
+  drivers/keyboard.h drivers/../paging/page.h
+exception.o: exceptions/exception.c exceptions/exception.h \
+  exceptions/../types.h exceptions/../syscalls/system_call.h \
+  exceptions/../syscalls/../x86_desc.h exceptions/../syscalls/../types.h \
+  exceptions/../syscalls/../lib.h \
+  exceptions/../syscalls/../filesystem/filesystem.h \
+  exceptions/../syscalls/../filesystem/../types.h \
+  exceptions/../syscalls/../filesystem/../multiboot.h \
+  exceptions/../syscalls/../filesystem/../types.h \
+  exceptions/../syscalls/../filesystem/../drivers/keyboard.h \
+  exceptions/../syscalls/../filesystem/../drivers/../types.h \
+  exceptions/../syscalls/../filesystem/../drivers/../lib.h \
+  exceptions/../syscalls/../filesystem/../drivers/i8259.h \
+  exceptions/../syscalls/../filesystem/../drivers/terminal.h \
+  exceptions/../syscalls/../filesystem/../drivers/../filesystem/filesystem.h \
+  exceptions/../syscalls/../filesystem/../drivers/keyboard.h \
+  exceptions/../syscalls/../filesystem/../drivers/../paging/page.h \
+  exceptions/../syscalls/../filesystem/../drivers/../paging/../types.h \
+  exceptions/../syscalls/../filesystem/../drivers/../paging/../x86_desc.h \
+  exceptions/../syscalls/../filesystem/../drivers/../paging/../lib.h \
+  exceptions/../syscalls/../filesystem/../drivers/../syscalls/system_call.h \
+  exceptions/../syscalls/../filesystem/../drivers/graphic_terminal.h \
+  exceptions/../syscalls/../filesystem/../drivers/gui.h \
+  exceptions/../syscalls/../filesystem/../drivers/cirrus.h \
+  exceptions/../syscalls/../filesystem/../drivers/./pci.h \
+  exceptions/../syscalls/../filesystem/../drivers/./../lib.h \
+  exceptions/../syscalls/../filesystem/../drivers/./terminal.h \
+  exceptions/../syscalls/../filesystem/../drivers/../filesystem/ext2.h \
+  exceptions/../syscalls/../filesystem/../drivers/../filesystem/filesystem.h \
+  exceptions/../syscalls/../filesystem/../drivers/../filesystem/../lib.h \
+  exceptions/../syscalls/../filesystem/../drivers/../filesystem/../drivers/ata.h \
+  exceptions/../syscalls/../filesystem/../drivers/../filesystem/../drivers/../lib.h \
+  exceptions/../syscalls/../filesystem/../drivers/../processes/process.h \
+  exceptions/../syscalls/../filesystem/../drivers/../processes/../types.h \
+  exceptions/../syscalls/../filesystem/../drivers/../processes/../drivers/terminal.h \
+  exceptions/../syscalls/../filesystem/../drivers/../processes/../filesystem/filesystem.h \
+  exceptions/../syscalls/../filesystem/../drivers/../processes/../paging/page.h \
+  exceptions/../syscalls/../filesystem/../drivers/../processes/../signals/signals.h \
+  exceptions/../syscalls/../filesystem/../drivers/../processes/../signals/../x86_desc.h \
+  exceptions/../syscalls/../filesystem/../drivers/../processes/../signals/../processes/process.h \
+  exceptions/../syscalls/../filesystem/../drivers/../processes/../signals/../syscalls/system_call.h \
+  exceptions/../syscalls/../filesystem/../drivers/../processes/../signals/../drivers/graphic_terminal.h \
+  exceptions/../syscalls/../filesystem/../drivers/../processes/../drivers/gui.h \
+  exceptions/../syscalls/../filesystem/../drivers/../processes/../text.h \
+  exceptions/../syscalls/../filesystem/../drivers/../processes/../types.h \
+  exceptions/../syscalls/../filesystem/../drivers/../text.h \
+  exceptions/../syscalls/../filesystem/../lib.h \
+  exceptions/../syscalls/../filesystem/../drivers/rtc.h \
+  exceptions/../syscalls/../filesystem/../processes/process.h \
+  exceptions/../syscalls/../filesystem/../drivers/ata.h \
+  exceptions/../syscalls/../filesystem/ext2.h \
+  exceptions/../syscalls/../paging/page.h \
+  exceptions/../syscalls/../drivers/rtc.h \
+  exceptions/../syscalls/../processes/process.h \
+  exceptions/../syscalls/../filesystem/ext2.h \
+  exceptions/../syscalls/../signals/signals.h \
+  exceptions/../syscalls/../drivers/graphic_terminal.h \
+  exceptions/../syscalls/../drivers/gui.h \
+  exceptions/../syscalls/../text.h exceptions/../lib.h \
+  exceptions/../x86_desc.h
+ext2.o: filesystem/ext2.c filesystem/ext2.h filesystem/filesystem.h \
+  filesystem/../types.h filesystem/../multiboot.h filesystem/../types.h \
+  filesystem/../drivers/keyboard.h filesystem/../drivers/../types.h \
+  filesystem/../drivers/../lib.h filesystem/../drivers/../types.h \
+  filesystem/../drivers/i8259.h filesystem/../drivers/terminal.h \
+  filesystem/../drivers/../filesystem/filesystem.h \
+  filesystem/../drivers/keyboard.h filesystem/../drivers/../paging/page.h \
+  filesystem/../drivers/../paging/../types.h \
+  filesystem/../drivers/../paging/../x86_desc.h \
+  filesystem/../drivers/../paging/../types.h \
+  filesystem/../drivers/../paging/../lib.h \
+  filesystem/../drivers/../syscalls/system_call.h \
+  filesystem/../drivers/../syscalls/../x86_desc.h \
+  filesystem/../drivers/../syscalls/../lib.h \
+  filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  filesystem/../drivers/../syscalls/../paging/page.h \
+  filesystem/../drivers/../syscalls/../drivers/rtc.h \
+  filesystem/../drivers/../syscalls/../drivers/../types.h \
+  filesystem/../drivers/../syscalls/../drivers/../lib.h \
+  filesystem/../drivers/../syscalls/../drivers/i8259.h \
+  filesystem/../drivers/../syscalls/../drivers/terminal.h \
+  filesystem/../drivers/../syscalls/../processes/process.h \
+  filesystem/../drivers/../syscalls/../processes/../types.h \
+  filesystem/../drivers/../syscalls/../processes/../drivers/terminal.h \
+  filesystem/../drivers/../syscalls/../processes/../filesystem/filesystem.h \
+  filesystem/../drivers/../syscalls/../processes/../paging/page.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/signals.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../x86_desc.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../processes/process.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../syscalls/system_call.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../lib.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/gui.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/cirrus.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../paging/page.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./pci.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./../lib.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./terminal.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/ext2.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../processes/process.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/keyboard.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../text.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  filesystem/../drivers/../syscalls/../processes/../drivers/gui.h \
+  filesystem/../drivers/../syscalls/../processes/../text.h \
+  filesystem/../drivers/../syscalls/../filesystem/ext2.h \
+  filesystem/../drivers/../syscalls/../signals/signals.h \
+  filesystem/../drivers/../syscalls/../drivers/graphic_terminal.h \
+  filesystem/../drivers/../syscalls/../drivers/gui.h \
+  filesystem/../drivers/../syscalls/../text.h \
+  filesystem/../drivers/graphic_terminal.h filesystem/../drivers/gui.h \
+  filesystem/../lib.h filesystem/../drivers/rtc.h \
+  filesystem/../processes/process.h filesystem/../drivers/ata.h
+filesystem.o: filesystem/filesystem.c filesystem/filesystem.h \
+  filesystem/../types.h filesystem/../multiboot.h filesystem/../types.h \
+  filesystem/../drivers/keyboard.h filesystem/../drivers/../types.h \
+  filesystem/../drivers/../lib.h filesystem/../drivers/../types.h \
+  filesystem/../drivers/i8259.h filesystem/../drivers/terminal.h \
+  filesystem/../drivers/../filesystem/filesystem.h \
+  filesystem/../drivers/keyboard.h filesystem/../drivers/../paging/page.h \
+  filesystem/../drivers/../paging/../types.h \
+  filesystem/../drivers/../paging/../x86_desc.h \
+  filesystem/../drivers/../paging/../types.h \
+  filesystem/../drivers/../paging/../lib.h \
+  filesystem/../drivers/../syscalls/system_call.h \
+  filesystem/../drivers/../syscalls/../x86_desc.h \
+  filesystem/../drivers/../syscalls/../lib.h \
+  filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  filesystem/../drivers/../syscalls/../paging/page.h \
+  filesystem/../drivers/../syscalls/../drivers/rtc.h \
+  filesystem/../drivers/../syscalls/../drivers/../types.h \
+  filesystem/../drivers/../syscalls/../drivers/../lib.h \
+  filesystem/../drivers/../syscalls/../drivers/i8259.h \
+  filesystem/../drivers/../syscalls/../drivers/terminal.h \
+  filesystem/../drivers/../syscalls/../processes/process.h \
+  filesystem/../drivers/../syscalls/../processes/../types.h \
+  filesystem/../drivers/../syscalls/../processes/../drivers/terminal.h \
+  filesystem/../drivers/../syscalls/../processes/../filesystem/filesystem.h \
+  filesystem/../drivers/../syscalls/../processes/../paging/page.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/signals.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../x86_desc.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../processes/process.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../syscalls/system_call.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../lib.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/gui.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/cirrus.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../paging/page.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./pci.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./../lib.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./terminal.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/ext2.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../lib.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/ata.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/../lib.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../processes/process.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/keyboard.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../text.h \
+  filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  filesystem/../drivers/../syscalls/../processes/../drivers/gui.h \
+  filesystem/../drivers/../syscalls/../processes/../text.h \
+  filesystem/../drivers/../syscalls/../filesystem/ext2.h \
+  filesystem/../drivers/../syscalls/../signals/signals.h \
+  filesystem/../drivers/../syscalls/../drivers/graphic_terminal.h \
+  filesystem/../drivers/../syscalls/../drivers/gui.h \
+  filesystem/../drivers/../syscalls/../text.h \
+  filesystem/../drivers/graphic_terminal.h filesystem/../drivers/gui.h \
+  filesystem/../lib.h filesystem/../drivers/rtc.h \
+  filesystem/../processes/process.h filesystem/../drivers/ata.h \
+  filesystem/ext2.h
+interrupt.o: interrupts/interrupt.c interrupts/interrupt.h \
+  interrupts/../types.h interrupts/../x86_desc.h interrupts/../types.h \
+  interrupts/../lib.h interrupts/../drivers/i8259.h \
+  interrupts/../drivers/../types.h interrupts/../drivers/../lib.h \
+  interrupts/../drivers/rtc.h interrupts/../drivers/i8259.h \
+  interrupts/../drivers/terminal.h \
+  interrupts/../drivers/../filesystem/filesystem.h \
+  interrupts/../drivers/../filesystem/../types.h \
+  interrupts/../drivers/../filesystem/../multiboot.h \
+  interrupts/../drivers/../filesystem/../types.h \
+  interrupts/../drivers/../filesystem/../drivers/keyboard.h \
+  interrupts/../drivers/../filesystem/../drivers/../types.h \
+  interrupts/../drivers/../filesystem/../drivers/../lib.h \
+  interrupts/../drivers/../filesystem/../drivers/i8259.h \
+  interrupts/../drivers/../filesystem/../drivers/terminal.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/system_call.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../x86_desc.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../lib.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../paging/page.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../paging/../types.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../paging/../x86_desc.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../paging/../lib.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../drivers/rtc.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/process.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../types.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/terminal.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../filesystem/filesystem.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../paging/page.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/signals.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../x86_desc.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../processes/process.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../syscalls/system_call.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../lib.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/gui.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/cirrus.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../paging/page.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./pci.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./../lib.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/./terminal.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/ext2.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/filesystem.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../lib.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/ata.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../filesystem/../drivers/../lib.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/graphic_terminal.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../processes/process.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/keyboard.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../text.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../signals/../drivers/../types.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../drivers/gui.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../processes/../text.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../filesystem/ext2.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../signals/signals.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../drivers/graphic_terminal.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../drivers/gui.h \
+  interrupts/../drivers/../filesystem/../drivers/../syscalls/../text.h \
+  interrupts/../drivers/../filesystem/../drivers/graphic_terminal.h \
+  interrupts/../drivers/../filesystem/../drivers/gui.h \
+  interrupts/../drivers/../filesystem/../lib.h \
+  interrupts/../drivers/../filesystem/../drivers/rtc.h \
+  interrupts/../drivers/../filesystem/../processes/process.h \
+  interrupts/../drivers/../filesystem/../drivers/ata.h \
+  interrupts/../drivers/../filesystem/ext2.h \
+  interrupts/../drivers/keyboard.h interrupts/../drivers/../paging/page.h
+page.o: paging/page.c paging/page.h paging/../types.h \
+  paging/../x86_desc.h paging/../types.h paging/../lib.h
+process.o: processes/process.c processes/process.h processes/../types.h \
+  processes/../drivers/terminal.h processes/../drivers/../types.h \
+  processes/../drivers/../lib.h processes/../drivers/../types.h \
+  processes/../drivers/../filesystem/filesystem.h \
+  processes/../drivers/../filesystem/../types.h \
+  processes/../drivers/../filesystem/../multiboot.h \
+  processes/../drivers/../filesystem/../types.h \
+  processes/../drivers/../filesystem/../drivers/keyboard.h \
+  processes/../drivers/../filesystem/../drivers/../types.h \
+  processes/../drivers/../filesystem/../drivers/../lib.h \
+  processes/../drivers/../filesystem/../drivers/i8259.h \
+  processes/../drivers/../filesystem/../drivers/terminal.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/system_call.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../x86_desc.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../types.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../lib.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../paging/page.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../paging/../types.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../paging/../x86_desc.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../paging/../lib.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/rtc.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/../types.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/../lib.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/i8259.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/terminal.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../processes/process.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../filesystem/ext2.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../filesystem/../lib.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../filesystem/../drivers/ata.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../filesystem/../drivers/../lib.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/signals.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../x86_desc.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../processes/process.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../syscalls/system_call.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../drivers/graphic_terminal.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../drivers/../types.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../drivers/../lib.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../drivers/../filesystem/filesystem.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../drivers/gui.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../drivers/cirrus.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../drivers/../paging/page.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../drivers/./pci.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../drivers/./../lib.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../drivers/./terminal.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../drivers/../filesystem/ext2.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../drivers/graphic_terminal.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../drivers/../processes/process.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../drivers/keyboard.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../drivers/../text.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../signals/../drivers/../types.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/graphic_terminal.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/gui.h \
+  processes/../drivers/../filesystem/../drivers/../syscalls/../text.h \
+  processes/../drivers/../filesystem/../drivers/graphic_terminal.h \
+  processes/../drivers/../filesystem/../drivers/gui.h \
+  processes/../drivers/../filesystem/../lib.h \
+  processes/../drivers/../filesystem/../drivers/rtc.h \
+  processes/../drivers/../filesystem/../processes/process.h \
+  processes/../drivers/../filesystem/../drivers/ata.h \
+  processes/../drivers/../filesystem/ext2.h \
+  processes/../drivers/keyboard.h processes/../drivers/../paging/page.h \
+  processes/../filesystem/filesystem.h processes/../paging/page.h \
+  processes/../signals/signals.h processes/../drivers/gui.h \
+  processes/../text.h
+signals.o: signals/signals.c signals/signals.h signals/../x86_desc.h \
+  signals/../types.h signals/../processes/process.h \
+  signals/../processes/../types.h \
+  signals/../processes/../drivers/terminal.h \
+  signals/../processes/../drivers/../types.h \
+  signals/../processes/../drivers/../lib.h \
+  signals/../processes/../drivers/../types.h \
+  signals/../processes/../drivers/../filesystem/filesystem.h \
+  signals/../processes/../drivers/../filesystem/../types.h \
+  signals/../processes/../drivers/../filesystem/../multiboot.h \
+  signals/../processes/../drivers/../filesystem/../types.h \
+  signals/../processes/../drivers/../filesystem/../drivers/keyboard.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../types.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../lib.h \
+  signals/../processes/../drivers/../filesystem/../drivers/i8259.h \
+  signals/../processes/../drivers/../filesystem/../drivers/terminal.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/system_call.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../x86_desc.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../lib.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../paging/page.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../paging/../types.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../paging/../x86_desc.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../paging/../lib.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/rtc.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/../types.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/../lib.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/i8259.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/terminal.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../processes/process.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../filesystem/ext2.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../filesystem/filesystem.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../filesystem/../lib.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../filesystem/../drivers/ata.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../filesystem/../drivers/../lib.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../signals/signals.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/graphic_terminal.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/../filesystem/filesystem.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/gui.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/cirrus.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/../paging/page.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/./pci.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/./../lib.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/./terminal.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/../filesystem/ext2.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/graphic_terminal.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/../processes/process.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/keyboard.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/../text.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/../types.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../drivers/gui.h \
+  signals/../processes/../drivers/../filesystem/../drivers/../syscalls/../text.h \
+  signals/../processes/../drivers/../filesystem/../drivers/graphic_terminal.h \
+  signals/../processes/../drivers/../filesystem/../drivers/gui.h \
+  signals/../processes/../drivers/../filesystem/../lib.h \
+  signals/../processes/../drivers/../filesystem/../drivers/rtc.h \
+  signals/../processes/../drivers/../filesystem/../processes/process.h \
+  signals/../processes/../drivers/../filesystem/../drivers/ata.h \
+  signals/../processes/../drivers/../filesystem/ext2.h \
+  signals/../processes/../drivers/keyboard.h \
+  signals/../processes/../drivers/../paging/page.h \
+  signals/../processes/../filesystem/filesystem.h \
+  signals/../processes/../paging/page.h \
+  signals/../processes/../signals/signals.h \
+  signals/../processes/../drivers/gui.h signals/../processes/../text.h \
+  signals/../syscalls/system_call.h signals/../drivers/graphic_terminal.h
+system_call.o: syscalls/system_call.c syscalls/system_call.h \
+  syscalls/../x86_desc.h syscalls/../types.h syscalls/../lib.h \
+  syscalls/../filesystem/filesystem.h syscalls/../filesystem/../types.h \
+  syscalls/../filesystem/../multiboot.h syscalls/../filesystem/../types.h \
+  syscalls/../filesystem/../drivers/keyboard.h \
+  syscalls/../filesystem/../drivers/../types.h \
+  syscalls/../filesystem/../drivers/../lib.h \
+  syscalls/../filesystem/../drivers/i8259.h \
+  syscalls/../filesystem/../drivers/terminal.h \
+  syscalls/../filesystem/../drivers/../filesystem/filesystem.h \
+  syscalls/../filesystem/../drivers/keyboard.h \
+  syscalls/../filesystem/../drivers/../paging/page.h \
+  syscalls/../filesystem/../drivers/../paging/../types.h \
+  syscalls/../filesystem/../drivers/../paging/../x86_desc.h \
+  syscalls/../filesystem/../drivers/../paging/../lib.h \
+  syscalls/../filesystem/../drivers/../syscalls/system_call.h \
+  syscalls/../filesystem/../drivers/graphic_terminal.h \
+  syscalls/../filesystem/../drivers/gui.h \
+  syscalls/../filesystem/../drivers/cirrus.h \
+  syscalls/../filesystem/../drivers/./pci.h \
+  syscalls/../filesystem/../drivers/./../lib.h \
+  syscalls/../filesystem/../drivers/./terminal.h \
+  syscalls/../filesystem/../drivers/../filesystem/ext2.h \
+  syscalls/../filesystem/../drivers/../filesystem/filesystem.h \
+  syscalls/../filesystem/../drivers/../filesystem/../lib.h \
+  syscalls/../filesystem/../drivers/../filesystem/../drivers/ata.h \
+  syscalls/../filesystem/../drivers/../filesystem/../drivers/../lib.h \
+  syscalls/../filesystem/../drivers/../processes/process.h \
+  syscalls/../filesystem/../drivers/../processes/../types.h \
+  syscalls/../filesystem/../drivers/../processes/../drivers/terminal.h \
+  syscalls/../filesystem/../drivers/../processes/../filesystem/filesystem.h \
+  syscalls/../filesystem/../drivers/../processes/../paging/page.h \
+  syscalls/../filesystem/../drivers/../processes/../signals/signals.h \
+  syscalls/../filesystem/../drivers/../processes/../signals/../x86_desc.h \
+  syscalls/../filesystem/../drivers/../processes/../signals/../processes/process.h \
+  syscalls/../filesystem/../drivers/../processes/../signals/../syscalls/system_call.h \
+  syscalls/../filesystem/../drivers/../processes/../signals/../drivers/graphic_terminal.h \
+  syscalls/../filesystem/../drivers/../processes/../drivers/gui.h \
+  syscalls/../filesystem/../drivers/../processes/../text.h \
+  syscalls/../filesystem/../drivers/../processes/../types.h \
+  syscalls/../filesystem/../drivers/../text.h \
+  syscalls/../filesystem/../lib.h syscalls/../filesystem/../drivers/rtc.h \
+  syscalls/../filesystem/../processes/process.h \
+  syscalls/../filesystem/../drivers/ata.h syscalls/../filesystem/ext2.h \
+  syscalls/../paging/page.h syscalls/../drivers/rtc.h \
+  syscalls/../processes/process.h syscalls/../filesystem/ext2.h \
+  syscalls/../signals/signals.h syscalls/../drivers/graphic_terminal.h \
+  syscalls/../drivers/gui.h syscalls/../text.h
